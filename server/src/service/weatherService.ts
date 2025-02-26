@@ -3,33 +3,50 @@ dotenv.config();
 
 // TODO: Define an interface for the Coordinates object
 interface Coordinates {
+  city: string,
   longitude: number,
   latitude: number,
 };
 
 // TODO: Define a class for the Weather object
-class Weather {
-  tempF: number;
-  wind: number;
-  humidity: number;
+class weatherData {
+  city: string;
+  longitude: number;
+  latitude: number; 
 
-  constructor(tempF: number, wind: number, humidity: number) {
-    this.tempF = tempF;
-    this.wind = wind;
-    this.humidity = humidity;
-  }
-  displayInfo(): {
-    console
+  constructor (city: string,longitude: number,latitude: number){
+    this.city = city;
+    this.longitude = longitude;
+    this.latitude = latitude;
   }
 
 }
+
+
 // TODO: Complete the WeatherService class
+// TODO: Define the baseURL, API key, and city name properties
 class WeatherService {
-  // TODO: Define the baseURL, API key, and city name properties
+  baseURL: string;
+  apiKey: string;
+  cityName: string;
+  
+  constructor (baseURL:string, apiKey: string, cityName: string) {
+    this.baseURL = baseURL;
+    this.apiKey = apiKey;
+    this.cityName = cityName;
+
+  }
+
   // TODO: Create fetchLocationData method
-  // private async fetchLocationData(query: string) {}
+  private async fetchLocationData(query: string) {
+    return `${this.cityName}, ${this.apiKey}, ${this.baseURL}`;
+
+    }
+  }
   // TODO: Create destructureLocationData method
-  // private destructureLocationData(locationData: Coordinates): Coordinates {}
+  private destructureLocationData(locationData: Coordinates): Coordinates {
+
+  }
   // TODO: Create buildGeocodeQuery method
   // private buildGeocodeQuery(): string {}
   // TODO: Create buildWeatherQuery method

@@ -1,12 +1,15 @@
 // TODO: Define a City class with name and id properties
-
 class City {
   name: string;
+  city_id: string;
 
-constructor(name: string){
+constructor(
+  name: string,
+  city_id: string,
+) {
   this.name = name;
-} 
-
+  this.city_id = city_id;
+  } 
 };
 
 // TODO: Complete the HistoryService class
